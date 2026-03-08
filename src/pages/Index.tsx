@@ -53,7 +53,36 @@ const Index = () => {
       <title>Nidhal Gharbi — Developer & Tech Enthusiast</title>
       <meta name="description" content="Connect with Nidhal Gharbi — Developer and Tech Enthusiast. Find all links in one place." />
 
-      <main className="w-full max-w-md mx-auto flex flex-col items-center gap-8 animate-fade-in">
+      {/* Floating particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full"
+            style={{
+              width: `${Math.random() * 4 + 2}px`,
+              height: `${Math.random() * 4 + 2}px`,
+              left: `${Math.random() * 100}%`,
+              bottom: `-${Math.random() * 10}%`,
+              background: i % 3 === 0
+                ? 'hsl(168 80% 50% / 0.3)'
+                : i % 3 === 1
+                ? 'hsl(250 70% 60% / 0.3)'
+                : 'hsl(200 80% 55% / 0.25)',
+              animation: `float-particle ${8 + Math.random() * 12}s linear infinite`,
+              animationDelay: `${Math.random() * 10}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Rotating ring decoration */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none opacity-[0.04]"
+        style={{ animation: 'spin-slow 60s linear infinite' }}>
+        <div className="w-full h-full rounded-full border border-primary" />
+      </div>
+
+      <main className="relative z-10 w-full max-w-md mx-auto flex flex-col items-center gap-8 animate-fade-in">
         {/* Avatar */}
         <div className="relative">
           <div className="w-36 h-44 rounded-2xl overflow-hidden glow-ring border-2 border-primary/30 bg-secondary">
