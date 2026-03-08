@@ -51,6 +51,31 @@
 @layer utilities {
   .gradient-bg {
     background: radial-gradient(ellipse at top, hsl(220 18% 12%) 0%, hsl(220 20% 7%) 50%, hsl(250 20% 8%) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .gradient-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, hsl(168 80% 50% / 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(250 70% 60% / 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(200 80% 55% / 0.03) 0%, transparent 60%);
+    animation: bg-pulse 8s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+  .gradient-bg::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    right: -200px;
+    background: radial-gradient(circle, hsl(168 80% 50% / 0.07) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: orb-float 12s ease-in-out infinite alternate;
+    pointer-events: none;
   }
   .gradient-text {
     @apply bg-clip-text text-transparent;
@@ -69,7 +94,27 @@
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-300;
     background: linear-gradient(135deg, hsl(168 80% 50% / 0.08), hsl(250 70% 60% / 0.08));
-  }
+}
+
+@keyframes bg-pulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+@keyframes orb-float {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, 60px) scale(1.2); }
+  100% { transform: translate(40px, -40px) scale(0.9); }
+}
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
   .link-button:hover::before {
     @apply opacity-100;
   }
