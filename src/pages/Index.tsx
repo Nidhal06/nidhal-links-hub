@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Linkedin, Github, Globe, QrCode, Copy, Download, Check, ExternalLink } from "lucide-react";
 import { QRCodeCanvas } from "qrcode.react";
-import avatarImg from "@/assets/avatar-placeholder.png";
+import avatarImg from "@/assets/nidhal-avatar.jpg";
 
 const PAGE_URL = "https://nidhalgharbi-links.lovable.app";
 
