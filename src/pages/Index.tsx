@@ -56,11 +56,11 @@ const Index = () => {
       <main className="w-full max-w-md mx-auto flex flex-col items-center gap-8 animate-fade-in">
         {/* Avatar */}
         <div className="relative">
-          <div className="w-28 h-28 rounded-full overflow-hidden glow-ring border-2 border-primary/30 bg-secondary">
+          <div className="w-36 h-44 rounded-2xl overflow-hidden glow-ring border-2 border-primary/30 bg-secondary">
             <img
               src={avatarImg}
               alt="Nidhal Gharbi"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
