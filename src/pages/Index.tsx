@@ -3,7 +3,7 @@ import { Linkedin, Github, Globe, QrCode, Copy, Download, Check, ExternalLink } 
 import { QRCodeCanvas } from "qrcode.react";
 import avatarImg from "@/assets/nidhal-avatar.jpg";
 
-const PAGE_URL = "https://nidhalgharbi-links.lovable.app";
+const PAGE_URL = "https://nidhal-links-hub.vercel.app";
 
 const links = [
   {
