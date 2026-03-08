@@ -71,7 +71,7 @@ const Index = () => {
         {/* Name & Role */}
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold font-display gradient-text">Nidhal Gharbi</h1>
-          <p className="text-muted-foreground text-sm tracking-wide">Developer / Tech Enthusiast</p>
+          <p className="text-muted-foreground text-sm tracking-wide">Web Developer</p>
         </div>
 
         {/* Links */}
